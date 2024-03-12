@@ -2,7 +2,7 @@ version: "3"
 services:
     mysql:
         container_name: some-mysql
-        image: mysql:5.7
+        image: mysql:latest
         restart: unless-stopped
         environment:
             MYSQL_ROOT_PASSWORD: admin
@@ -11,7 +11,7 @@ services:
             - prestashop_network
     prestashop:
         container_name: prestashop
-        image: prestashop/prestashop:latest # Latest stable version of the PrestaShop, to see all available images go to ...
+        image: prestashop/prestashop:latest # It will get the latest version of PrestaShop. If you need a specific version, you can specify it here.
         restart: unless-stopped
         depends_on:
             - mysql
